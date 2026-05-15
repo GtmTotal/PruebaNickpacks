@@ -1,5 +1,5 @@
 [phases.setup]
-nixPkgs = ["nodejs_22"]
+nixPkgs = ["nodejs_24"]
 
 [phases.install]
 cmds = ["npm install"]
@@ -12,5 +12,3 @@ cmd = "npx serve -s build -l 80"
 
 [variables]
 PORT = "80"
-
-
