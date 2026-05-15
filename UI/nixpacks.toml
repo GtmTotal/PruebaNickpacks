@@ -9,7 +9,7 @@ cmds = ["npm install --engine-strict=false"]
 cmds = ["npm run build"]
 
 [start]
-cmd = "npx serve -s build -l 80"
+cmd = "npx serve -s build -l 3001"
 
 [variables]
-PORT = "80"
+PORT = "3001"
