@@ -9,7 +9,9 @@ cmds = ["npm install"]
 [phases.build]
 cmds = ["npm run build"]
 
-# Usamos el proveedor estático de Nixpacks para servir la carpeta 'build'
-# Esto es más eficiente que usar 'npx serve'
-[static]
-directory = "build"
+# Usamos npx serve para servir la carpeta 'build' en el puerto 80
+[start]
+cmd = "npx serve -s build -l 80"
+
+[variables]
+NODE_ENV = "production"
