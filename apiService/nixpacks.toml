@@ -1,8 +1,6 @@
-# Configuración de Nixpacks para el Backend .NET
-# Nixpacks detectará automáticamente .NET 10 si está disponible en su repositorio de paquetes.
-
 [phases.setup]
 nixPkgs = ["dotnet-sdk_10"]
+nixpkgsArchive = "nixos-unstable"
 
 [phases.build]
 cmds = ["dotnet publish InformeObras.csproj -c Release -o out"]
