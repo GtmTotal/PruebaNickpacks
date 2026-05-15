@@ -2,6 +2,9 @@
 nixPkgs = ["dotnet-sdk_10"]
 nixpkgsArchive = "nixos-unstable"
 
+[phases.install]
+cmds = ["dotnet restore InformeObras.csproj"]
+
 [phases.build]
 cmds = ["dotnet publish InformeObras.csproj -c Release -o out"]
 
