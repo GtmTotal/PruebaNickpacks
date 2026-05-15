@@ -9,6 +9,7 @@ export interface InformeGuardado {
   conclusiones?: string;
   ultimaModificacion?: string;
   progreso?: number;
+  _syncPending?: boolean;
   [key: string]: any;
 }
 

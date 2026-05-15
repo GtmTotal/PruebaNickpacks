@@ -376,7 +376,12 @@
               data-estado={estadoDe(inf)}
               onclick={() => editarInforme(inf)}>
               <div class="card-header">
-                <span class="centro-nombre">{ inf.nombreObra }</span>
+                <span class="centro-nombre">
+                  { inf.nombreObra }
+                  {#if inf._syncPending}
+                    <span class="sync-badge" title="Cambios locales pendientes de sincronizar">☁️</span>
+                  {/if}
+                </span>
                 <span class="centro-estado" style="color: {colorEstado(inf)}">
                   { labelEstado(inf) }
                 </span>

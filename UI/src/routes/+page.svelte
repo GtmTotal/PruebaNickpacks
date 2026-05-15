@@ -227,7 +227,12 @@
               data-estado={estadoDe(inf)}
               onclick={() => editarInforme(inf)}>
               <div class="card-header">
-                <span class="centro-nombre">{ inf.nombreObra }</span>
+                <span class="centro-nombre">
+                  { inf.nombreObra }
+                  {#if inf._syncPending}
+                    <span class="sync-badge" title="Cambios locales pendientes de sincronizar">☁️</span>
+                  {/if}
+                </span>
                 <span class="centro-estado">{ labelEstado(inf) }</span>
               </div>
               <div class="card-body">
@@ -664,6 +669,21 @@
   font-size: 17px;
   font-weight: 700;
   color: #0f172a;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sync-badge {
+  font-size: 14px;
+  filter: drop-shadow(0 0 2px rgba(251, 191, 36, 0.5));
+  animation: pulse-sync 2s infinite;
+}
+
+@keyframes pulse-sync {
+  0% { opacity: 0.6; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1.1); }
+  100% { opacity: 0.6; transform: scale(0.9); }
 }
 
 .centro-progreso {
